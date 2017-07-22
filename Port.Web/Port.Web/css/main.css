@@ -1,0 +1,78 @@
+﻿/*Progress Bars*/
+.progress-wrapper {
+    position: relative;
+}
+
+.progress-wrapper .text {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        text-align: center;
+        width: 100%;
+        z-index: 1;
+    }
+
+
+/* PLaceholder text color */
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: white;
+}
+
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: white;
+    opacity: 1;
+}
+
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: white;
+    opacity: 1;
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: white;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+    color: white;
+}
+
+/* Skill counters */
+.skill-text {
+    font-size: 18px;
+    color: darkslategray;
+
+}
+
+.skill-score-text {
+    font-size: 18px;
+    color: darkslategray;
+}
+
+.contact-text {
+    color: white;   
+}
+
+.featuredItem {
+    padding-bottom: 30px;
+}
+
+.sort-icon {
+    font-size: 9px;
+    margin-left: 5px;
+}
+
+th {
+    cursor: pointer;
+}
+
+.port-center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.portfolio-tab-height {
+    max-height: 660px;
+    min-height: 550px;
+}
