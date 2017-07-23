@@ -67,9 +67,9 @@
     <Compile Include="Infrastructure\BaseDomainContext.cs" />
     <Compile Include="Infrastructure\IPortfolioContext.cs" />
     <Compile Include="Infrastructure\PortfolioContext.cs" />
-    <Compile Include="Migrations\201707230004513_intial.cs" />
-    <Compile Include="Migrations\201707230004513_intial.Designer.cs">
-      <DependentUpon>201707230004513_intial.cs</DependentUpon>
+    <Compile Include="Migrations\201707230258379_Intial.cs" />
+    <Compile Include="Migrations\201707230258379_Intial.Designer.cs">
+      <DependentUpon>201707230258379_Intial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -98,8 +98,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707230004513_intial.resx">
-      <DependentUpon>201707230004513_intial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707230258379_Intial.resx">
+      <DependentUpon>201707230258379_Intial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

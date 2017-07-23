@@ -3,7 +3,7 @@ namespace Port.Net.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class intial : DbMigration
+    public partial class Intial : DbMigration
     {
         public override void Up()
         {

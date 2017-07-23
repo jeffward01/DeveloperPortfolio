@@ -12,9 +12,9 @@ namespace Port.Net.API
     {
         protected void Application_Start()
         {
+            ContainerConfig.Configure();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            ContainerConfig.Configure();
             //GlobalConfiguration.Configure(c => c.MapHttpAttributeRoutes());
         }
     }

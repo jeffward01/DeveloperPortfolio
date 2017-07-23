@@ -19,8 +19,8 @@ namespace Port.Net.API.Controllers
         }
 
         [HttpGet]
-        [Route("get")]
-        // [Route("/test")]
+     //   [Route("get")]
+         [Route("getUserInfo")]
         public async Task<GithubUserInfo> GetUserInfo()
         {
             return await _githubManager.GetGithubUserInfo();

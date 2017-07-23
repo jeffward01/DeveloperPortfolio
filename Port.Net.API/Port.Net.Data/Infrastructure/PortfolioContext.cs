@@ -5,6 +5,11 @@ namespace Port.Net.Data.Infrastructure
 {
     public class PortfolioContext : DbContext, IPortfolioContext
     {
+
+        public PortfolioContext() : base("PortfolioContext")
+        {
+                
+        }
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectImage> ProjectImages { get; set; }
         public DbSet<ProjectTechnology> ProjectTechnologies { get; set; }
