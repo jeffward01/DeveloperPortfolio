@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26228.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Port.Net.API", "Port.Net.API\Port.Net.API.csproj", "{94A6C9C8-1B01-4D96-8795-6819DC1FCA49}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Port.Net.Models", "Port.Net.Models\Port.Net.Models.csproj", "{9C74ED58-72F4-4CF4-B345-7422B9F0212F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Port.Net.Data", "Port.Net.Data\Port.Net.Data.csproj", "{8A911FB8-7F1D-4790-AA3E-C0E29CF04B1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Port.Net.Business", "Port.Net.Business\Port.Net.Business.csproj", "{90FD4E8F-5995-438B-9D97-700A63F27806}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{94A6C9C8-1B01-4D96-8795-6819DC1FCA49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94A6C9C8-1B01-4D96-8795-6819DC1FCA49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94A6C9C8-1B01-4D96-8795-6819DC1FCA49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94A6C9C8-1B01-4D96-8795-6819DC1FCA49}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C74ED58-72F4-4CF4-B345-7422B9F0212F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C74ED58-72F4-4CF4-B345-7422B9F0212F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C74ED58-72F4-4CF4-B345-7422B9F0212F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C74ED58-72F4-4CF4-B345-7422B9F0212F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A911FB8-7F1D-4790-AA3E-C0E29CF04B1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A911FB8-7F1D-4790-AA3E-C0E29CF04B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A911FB8-7F1D-4790-AA3E-C0E29CF04B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A911FB8-7F1D-4790-AA3E-C0E29CF04B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90FD4E8F-5995-438B-9D97-700A63F27806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90FD4E8F-5995-438B-9D97-700A63F27806}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90FD4E8F-5995-438B-9D97-700A63F27806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90FD4E8F-5995-438B-9D97-700A63F27806}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -8,7 +8,7 @@ namespace Port.Data.Infrastructure
 {
     public class PortfolioContext : DbContext
     {
-        private readonly string _connectionString { get; set; }
+        public string _connectionString { get; set; }
 
         public PortfolioContext(DbContextOptions<PortfolioContext> options, string connectionString) : base(options)
         {

@@ -14,14 +14,14 @@ namespace Port.Data.Repositories
             
         }
 
-        public Project CreateProject(Project project)
-        {
-            using (var context = new PortfolioContext())
-            {
-                context.Entry(project).Entity = EntityState.Added;
-                context.SaveChanges();
-                return project;
-            }
-        }
+       // public Project CreateProject(Project project)
+       // {
+       //    // using (var context = new PortfolioContext())
+       //    // {
+       //    //     context.Entry(project).Entity = EntityState.Added;
+       //    //     context.SaveChanges();
+       //    //     return project;
+       //    // }
+       // }
     }
 }

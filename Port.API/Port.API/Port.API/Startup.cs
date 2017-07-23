@@ -54,17 +54,10 @@ namespace Port.API
 
             //services.AddDbContext<PortfolioContext>(opt => opt.());
 
-
+            //Configure DB
             SetUpDb(services);
             // Add service and create Policy with options
-            services.AddCors(options =>
-            {
-                options.AddPolicy("CorsPolicy",
-                    corsBuilder => corsBuilder.AllowAnyOrigin()
-                    .AllowAnyMethod()
-                    .AllowAnyHeader()
-                    .AllowCredentials());
-            });
+            ConfigureCors(services);
 
             // Add framework services. for Entity
             //services.AddEntityFramework()
@@ -75,28 +68,29 @@ namespace Port.API
             //services.AddIdentity<ApplicationUser, IdentityRole>()
             //    .AddEntityFrameworkStores<ApplicationDbContext>()
             //    .AddDefaultTokenProviders();
-            
-            
+
+
             services.AddMvc();
-            services.Add(new ServiceDescriptor(typeof(PortfolioContext), new PortfolioContext(new DbContextOptions<PortfolioContext>(),Configuration.GetConnectionString("PortfolioContext"))));
+           // services.Add(new ServiceDescriptor(typeof(PortfolioContext), new PortfolioContext(new DbContextOptions<PortfolioContext>(),Configuration.GetConnectionString("PortfolioContext"))));
 
             //needed for NLog.Web
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+
+
+
 
             //Autofac
             // Add application services.
             //services.AddTransient<IEmailSender, AuthMessageSender>();
             //services.AddTransient<ISmsSender, AuthMessageSender>();
-
             var builder = new ContainerBuilder();
-
             //builder.RegisterModule<DataModule>();
             //builder.RegisterType<SeedDataService>().As<ISeedDataService>();
             // builder.RegisterType<TestManager>().As<ITestManager>();
             builder.RegisterType<GithubProvider>().As<IGithubProvider>();
             builder.RegisterType<HttpProvider>().As<IHttpProvider>();
             builder.RegisterType<GithubManager>().As<IGithubManager>();
-
             builder.Populate(services);
 
             var container = builder.Build();
@@ -120,8 +114,8 @@ namespace Port.API
 
             //needed for non-NETSTANDARD platforms: configure nlog.config in your project root. NB: you need NLog.Web.AspNetCore package for this.
             env.ConfigureNLog("NLog.config");
-
-
+            
+            //Use MVC
             app.UseMvc();
 
             app.UseApplicationInsightsRequestTelemetry();
@@ -132,7 +126,7 @@ namespace Port.API
 
         private void SetUpDb(IServiceCollection services)
         {
-            var sqlConnectionString = Configuration.GetConnectionString("DataAccessMySqlProvider");
+            var sqlConnectionString = Configuration.GetConnectionString("PortfolioContext");
 
             services.AddDbContext<PortfolioContext>(options =>
                 options.UseMySQL(
@@ -141,5 +135,19 @@ namespace Port.API
                 )
             );
         }
+
+        private void ConfigureCors(IServiceCollection services)
+        {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    corsBuilder => corsBuilder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+        }
+
+
     }
 }
