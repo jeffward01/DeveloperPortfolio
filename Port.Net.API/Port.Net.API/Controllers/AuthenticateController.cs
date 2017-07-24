@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
@@ -14,17 +15,9 @@ namespace Port.Net.API.Controllers
         private readonly string _adminPassword =  System.Configuration.ConfigurationManager.AppSettings["adminPassword"];
         [HttpGet]
         [Route("Auth")]
-        public IHttpActionResult SendEmail(string clientPassword)
+        public SqlBoolean SendEmail(string clientPassword)
         {
-           
-            if (clientPassword == _adminPassword)
-            {
-                return Ok();
-            }
-            else
-            {
-                return BadRequest("Error sending email");
-            }
+            return clientPassword == _adminPassword;
         }
     }
 }
