@@ -63,6 +63,9 @@
     <Compile Include="Dbo\ProjectTechnology.cs" />
     <Compile Include="Dto\GithubRepo.cs" />
     <Compile Include="Dto\GithubUserInfo.cs" />
+    <Compile Include="Dto\ProjectImageModel.cs" />
+    <Compile Include="Dto\ProjectModel.cs" />
+    <Compile Include="Dto\ProjectTechModel.cs" />
     <Compile Include="Dto\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

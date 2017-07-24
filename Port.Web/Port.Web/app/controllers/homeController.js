@@ -1,14 +1,20 @@
 ﻿'use strict';
-app.controller('homeController', ['$scope', '$rootScope', '$state', 'githubService', function ($scope, $rootScope, $state, githubService) {
+app.controller('homeController', ['$scope', '$rootScope', '$state', 'githubService', 'projectService', function ($scope, $rootScope, $state, githubService, projectService) {
     $scope.portfolioCats = 0;
     $scope.$on("openCodeSnippet",
-        function($event) {
+        function ($event) {
             $scope.portfolioCats = 5;
         });
 
+    projectService.getAllFeaturedProjects().then(function(result) {
+        $scope.featuredProjects = result.data;
+        },
+        function(err) {
+            console.log("error: " + JSON.stringify(err));
+        });
 
-    $scope.viewPortItem = function(projectId) {
-        $state.go('app.portfolioItem', { portfolioItemId: projectId });
+    $scope.viewPortItem = function (projectId) {
+        $state.go('app.portfolioItem', { projectId: projectId });
     }
 
     githubService.getUserInfo().then(function (result) {
@@ -35,7 +41,4 @@ app.controller('homeController', ['$scope', '$rootScope', '$state', 'githubServi
     $scope.test = function () {
         alert("Test");
     }
-
 }]);
-
-

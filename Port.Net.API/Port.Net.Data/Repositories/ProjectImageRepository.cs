@@ -21,6 +21,14 @@ namespace Port.Net.Data.Repositories
             }
         }
 
+        public List<int> GetAllIdsFor(int projectId)
+        {
+            using (var context = new PortfolioContext())
+            {
+                return context.ProjectImages.Where(_ => _.ProjectId == projectId)
+                    .Select(_ => _.ProjectImageId).ToList();
+            }
+        }
         public ProjectImage Edit(ProjectImage image)
         {
             using (var context = new PortfolioContext())

@@ -26,12 +26,12 @@
             })
             .state('app.portfolioItem',
             {
-                url: '/portfolioItem/:portfolioItemId',
+                url: '/portfolioItem/:projectId',
                 templateUrl: 'app/views/portfolioItem.html',
                 controller: 'portfolioItemController',
                 data: {
                     displayName: 'Portfolio Item',
-                    portfolioItemId: null
+                    projectId: null
                 }
             });
 
@@ -40,7 +40,7 @@
         //  $urlRouterProvider.otherwise('/app/landingPage');
     }]);
 
-app.value('serviceUrl', 'http://localhost:63085');
+app.value('serviceUrl', 'http://port.service/');
 
 app.directive('security', ['$compile', 'localStorageService', '$timeout', function ($compile, localStorageService, $timeout) {
     return {

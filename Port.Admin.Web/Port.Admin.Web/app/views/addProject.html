@@ -1,0 +1,175 @@
+﻿<section>
+    <div class="container">
+        <div class="page-header">
+            <h1>Add Project</h1>
+        </div>
+        <!--<pre>{{newProject | json}}</pre>-->
+        <pre>{{imagesToAdd.length | json}}</pre>
+        <div class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <form>
+                    <div class="checkbox">
+                        <div style="display: inline-flex">
+
+                            <label class="switch">
+                                <input type="checkbox" ng-model="newProject.FeaturedProject" >
+                                <span class="slider round"> </span>
+                            </label>
+                            <h4>&nbsp;&nbsp;&nbsp;Featured Project</h4>
+                        </div>
+                    </div>
+                    <div class="checkbox">
+                        <div style="display: inline-flex">
+
+                            <label class="switch">
+                                <input type="checkbox" ng-model="newProject.BlockchainProject" >
+                                <span class="slider round"> </span>
+                            </label>
+                            <h4>&nbsp;&nbsp;&nbsp;Blockchain Project</h4>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Project Name</label>
+                        <input type="text" class="form-control" id="projectName" ng-model="newProject.ProjectName" placeholder="Awesome project name">
+                    </div>
+                    <div class="form-group">
+                        <label for="projectRepo">Project Repo</label>
+                        <input type="text" class="form-control" id="projectRepo" ng-model="newProject.RepoUrl" placeholder="http://www.github.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Short Description</label>
+                        <textarea type="text" class="form-control" id="shortDesc" ng-model="newProject.ShortDesc" placeholder="Short Description"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Project Summary</label>
+                        <textarea type="text" class="form-control" id="projectSummary" ng-model="newProject.projectSummary" placeholder="What is this project about?"></textarea>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-lg-6">
+                        <div class="col-md-12 col-sm-12 col-lg-12" style="min-height: 175px">
+                            <div class="form-group row port-center">
+                                <label for="projectTech">Add Project Technology</label>
+                                <br />
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <tr style="background-color:  #2C3E50">
+                                            <th class="col-md-6 col-lg-6 col-sm-6 " style="text-align: center; color:white">Technology Name</th>
+                                            <th class="col-md-4 col-lg-4 col-sm-4" style="text-align: center; color:white">Add</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><input type="text" style="margin-top: 15px" ng-model="newTech.technologyName" class="form-control" id="techName" placeholder="Entity Framework"></td>
+
+                                            <td class="port-center"><i ng-click="addTech(newTech)" style="margin-top: 15px"class="fa fa-plus btn btn-sm btn-success"></i></td>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="form-group row port-center">
+                                <label for="projectTech" >Project Technologies</label>
+                                <br />
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr style="background-color:  #2C3E50">
+                                            <th class="col-md-6 col-lg-6 col-sm-6 " style="text-align: center; color:white">Technology Name</th>
+                                            <th class="col-md-4 col-lg-4 col-sm-4" style="text-align: center; color:white">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="tech in technologiesToAdd track by $index" ng-show="technologiesToAdd.length>0">
+                                        <td class="port-center">{{tech.technologyName}}</td>
+
+                                        <td class="port-center"><i ng-click="removeTech(tech)" class="btn btn-sm btn-danger fa fa-minus "></i></td>
+                                    </tr>
+                                    <tr ng-show="technologiesToAdd.length === 0">
+                                        <td colspan="2" class="port-center">No Technologies have been added</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6 col-lg-6">
+                        <div class="col-md-12 col-sm-12 col-lg-12" style="min-height: 175px">
+                            <div class="form-group row port-center">
+                                <label for="addProjectImageUrl">Add Project Image<small>&nbsp;&nbsp;(Max 5 images)</small></label>
+                                <br />
+                                <table class="table table-responsive">
+                                    <thead>
+                                        <tr style="background-color:  #2C3E50">
+                                            <th class="col-md-4 col-lg-4 col-sm-4 " style="text-align: center; color:white">Image Url</th>
+                                            <th class="col-md-4 col-lg-4 col-sm-4" style="text-align: center; color:white">Featured</th>
+                                            <th class="col-md-4 col-lg-4 col-sm-4" style="text-align: center; color:white">Add</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td><input style="margin-top: 15px" type="text" ng-model="newImage.ImageUrl" class="form-control" id="addProjectImageUrl" placeholder="http://www.github.com"></td>
+                                        <td class="port-center">
+                                            <div class="checkbox">
+                                                <div>
+
+                                                    <label class="switch">
+                                                        <input type="checkbox" ng-model="newImage.FeaturedImage">
+                                                        <span class="slider round"> </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="port-center"><i ng-click="addImage(newImage)" class="fa fa-plus btn btn-sm btn-success" ng-disabled="imagesToAdd.length === 5" style="margin-top: 15px"></i></td>
+                                    </tr>
+                                   
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="form-group row port-center">
+                                <label for="projectTech">Project Images</label>
+                                <br />
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr style="background-color:  #2C3E50">
+                                            <th class="col-md-4 col-lg-4 col-sm-4 " style="text-align: center; color:white">Image Url</th>
+                                            <th class="col-md-4 col-lg-4 col-sm-4" style="text-align: center; color:white">Featured</th>
+                                            <th class="col-md-4 col-lg-4 col-sm-4" style="text-align: center; color:white">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="image in imagesToAdd track by $index" ng-show="imagesToAdd.length>0">
+                                        <td>{{image.ImageUrl}}</td>
+                                        <td class="port-center">
+                                            <div class="checkbox">
+                                                <div>
+
+                                                    <label class="switch">
+                                                        <input type="checkbox" ng-model="image.FeaturedImage">
+                                                        <span class="slider round"> </span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="port-center"><i ng-click="removeImage(image)" class="fa fa-minus btn btn-sm btn-danger"></i></td>
+                                    </tr>
+                                    <tr ng-show="imagesToAdd.length === 0"><td colspan="3" class="port-center">No Images have been added</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-lg-12">
+                            <div class="port-center">
+                                <button type="button" ng-click="submitProject()"class="btn btn-lg btn-success">Submit</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

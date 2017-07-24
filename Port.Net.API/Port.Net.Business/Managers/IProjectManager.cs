@@ -1,13 +1,14 @@
 ﻿using Port.Net.Models.Dbo;
 using System.Collections.Generic;
+using Port.Net.Models.Dto;
 
 namespace Port.Net.Business.Managers
 {
     public interface IProjectManager
     {
-        Project CreateProject(Project project);
-        Project EditProject(Project project);
-        Project DeleteProject(Project project);
+        Project CreateProject(ProjectModel projectmodel);
+        Project EditProject(ProjectModel project);
+        Project DeleteProject(int projectId);
         List<Project> GetAll();
         Project GetById(int projectId);
         List<Project> GetAllFeaturedProjects();

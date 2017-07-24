@@ -19,6 +19,7 @@ namespace Port.Net.Data.Infrastructure
             modelBuilder.Entity<Project>().HasKey(_ => _.ProjectId);
             modelBuilder.Entity<Project>().HasMany(_ => _.ProjectImages)
                 .WithOptional().HasForeignKey(_ => _.ProjectId).WillCascadeOnDelete(true);
+
             modelBuilder.Entity<Project>().HasMany(_ => _.ProjectTechnologies)
                 .WithOptional().HasForeignKey(_ => _.ProjectId).WillCascadeOnDelete(true);
 

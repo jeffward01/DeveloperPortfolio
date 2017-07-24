@@ -226,7 +226,9 @@ section {
             padding-top: 75px;
         }
 }
-
+.portfolio-item {
+    position: relative; 
+}
 #portfolio .portfolio-item {
     margin: 0 0 15px;
     right: 0;
@@ -237,6 +239,7 @@ section {
         position: relative;
         max-width: 400px;
         margin: 0 auto;
+
     }
 
         #portfolio .portfolio-item .portfolio-link .caption {

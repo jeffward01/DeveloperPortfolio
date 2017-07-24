@@ -18,6 +18,16 @@ namespace Port.Net.Data.Repositories
             }
         }
 
+        public List<int> GetAllIdsFor(int projectId)
+        {
+            using (var context = new PortfolioContext())
+            {
+                return context.ProjectTechnologies.Where(_ => _.ProjectId == projectId)
+                    .Select(_ => _.ProjectTechnologyId).ToList();
+            }
+        }
+
+
         public ProjectTechnology Edit(ProjectTechnology technology)
         {
             using (var context = new PortfolioContext())

@@ -1,13 +1,18 @@
 ﻿<section id="portfolioItem">
     <!-- Page Content -->
+    <!--<pre>{{project | json}}</pre>
+    <pre>{{featuredImage | json}}</pre>
+    <pre>{{images | json}}</pre>-->
     <div class="container">
+
 
         <!-- Portfolio Item Heading -->
         <div class="row">
+
             <div class="col-lg-12">
                 <h1 class="page-header">
-                    Portfolio Item
-                    <small>Item Subheading</small>
+                    {{project.ProjectName}}
+                    <small>{{project.ShortDesc}}</small>
                 </h1>
             </div>
         </div>
@@ -16,58 +21,48 @@
         <div class="row">
 
             <div class="col-md-8">
-                <img class="img-responsive" src="http://placehold.it/750x500" alt="">
-            </div>
+                <img class="img-responsive" src="{{featuredImage.ImageUrl}}" target="_blank" alt="">
+                <div class="row">
 
+                    <div class="col-lg-12">
+                        <h3 class="page-header">Other Images</h3>
+                    </div>
+
+                    <div ng-repeat="image in images track by $index">
+                        <div class="col-sm-3 col-xs-6">
+                            <a href="{{image.ImageUrl}}">
+                                <img class="img-responsive portfolio-item" src="{{image.ImageUrl}}" target="_blank" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--http://placehold.it/750x500-->
             <div class="col-md-4">
-                <h3>Project Description</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
+                <h3>Project Summary</h3>
+                <p>{{project.ProjectSummary}}</p>
+
+                <br />
+
+                <p>
+                    <span style="white-space: nowrap">Repo URL:</span>&nbsp;<a target="_blank" href="{{project.RepoUrl}}">{{project.RepoUrl}} </a>
+                </p>
                 <h3>Project Technolgies</h3>
-                <ul>
-                    <li>Lorem Ipsum</li>
-                    <li>Dolor Sit Amet</li>
-                    <li>Consectetur</li>
-                    <li>Adipiscing Elit</li>
+                <!--<ul ng-repeat="tech in project.ProjectTechnologies track by $index">
+                    <li>{{tech.TechnologyName}}</li>
+                </ul>-->
+                <ul ng-repeat="limit in getLimits(tech)" class="port-col" ng-show="tech.length>2">
+                    <li ng-repeat="item in tech | limitTo : limit">
+                        {{ item.TechnologyName }}
+                    </li>
                 </ul>
-                <hr/>
-                <h3>Project Details</h3>
-                <p>Repo URL: </p>
-            
+                <ul ng-repeat="item in tech track by $index" ng-show="tech.length <= 2">
+                    <li>{{item.TechnologyName}}</li>
+                </ul>
+                <style>
+                </style>
             </div>
             <div>
-                
-            </div>
-        </div>
-        <!-- /.row -->
-        <!-- Related Projects Row -->
-        <div class="row">
-
-            <div class="col-lg-12">
-                <h3 class="page-header">Other Images</h3>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
-            </div>
-
-            <div class="col-sm-3 col-xs-6">
-                <a href="#">
-                    <img class="img-responsive portfolio-item" src="http://placehold.it/500x300" alt="">
-                </a>
             </div>
         </div>
     </div>

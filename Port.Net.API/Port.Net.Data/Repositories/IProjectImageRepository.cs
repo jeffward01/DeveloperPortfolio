@@ -8,6 +8,7 @@ namespace Port.Net.Data.Repositories
         ProjectImage Create(ProjectImage image);
 
         ProjectImage Edit(ProjectImage image);
+        List<int> GetAllIdsFor(int projectId);
 
         List<ProjectImage> GetAllByProjectId(int projectId);
 

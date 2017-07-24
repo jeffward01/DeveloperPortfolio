@@ -13,7 +13,7 @@
         </div>
     </div>
 </header>
-
+<!--<pre>{{featuredProjects | json}}</pre>-->
 <!-- Skills Grid Section -->
 <section id="skills">
     <div class="container">
@@ -285,13 +285,72 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4 portfolio-item">
-                <a class="portfolio-link" ng-click="viewPortItem(1)">
-
-                    <img src="img/portfolio/cabin.png" class="img-responsive" alt="Cabin">
+       
+            <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
+                <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[0].ProjectId)">
+                    <img ng-src="{{featuredProjects[0].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <div class="caption post-content">  
+                        <div class="details">
+                            <h3>{{featuredProjects[0].ProjectName}}</h3>
+                        </div>
+                    </div>
                 </a>
             </div>
-            <div class="col-sm-4 portfolio-item featuredItem">
+            <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
+                <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[1].ProjectId)">
+                    <img ng-src="{{featuredProjects[1].FeaturedImageUrl}}" class="img-responsive" alt="Cabin"  ng-click="viewPortItem(featuredProjects[1].ProjectId)">
+                    <div class="caption post-content">  
+                        <div class="details">
+                            <h3>{{featuredProjects[1].ProjectName}}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
+                <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[2].ProjectId)">
+                    <img ng-src="{{featuredProjects[2].FeaturedImageUrl}}" class="img-responsive" alt="Cabin"  ng-click="viewPortItem(featuredProjects[2].ProjectId)">
+                    <div class="caption post-content">  
+                        <div class="details">
+                            <h3>{{featuredProjects[2].ProjectName}}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
+                <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[3].ProjectId)">
+                    <img ng-src="{{featuredProjects[3].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <div class="caption post-content">  
+                        <div class="details">
+                            <h3>{{featuredProjects[3].ProjectName}}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
+                <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[4].ProjectId)">
+                    <img ng-src="{{featuredProjects[4].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <div class="caption post-content">  
+                        <div class="details">
+                            <h3>{{featuredProjects[4].ProjectName}}</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            
+
+            <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
+                <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[5].ProjectId)">
+                    <img ng-src="{{featuredProjects[5].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <div class="caption post-content">  
+                    <div class="details">
+                        <h3>{{featuredProjects[5].ProjectName}}</h3>
+                    </div>
+                    </div>
+                </a>
+            </div>
+     
+            <!--<div class="col-sm-4 portfolio-item featuredItem">
                 <a class="portfolio-link">
                     <img src="img/portfolio/cake.png" class="img-responsive" alt="Slice of cake">
                 </a>
@@ -316,7 +375,7 @@
 
                     <img src="img/portfolio/submarine.png" class="img-responsive" alt="Submarine">
                 </a>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>

@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Http.Cors;
 using Port.Net.Business.Managers;
 using Port.Net.Models.Dbo;
+using Port.Net.Models.Dto;
 
 namespace Port.Net.API.Controllers
 {
@@ -26,7 +27,12 @@ namespace Port.Net.API.Controllers
         {
             return Ok(_projectManager.GetAll());
         }
-
+        [HttpGet]
+        [Route("GetProjectbyId/{projectId}")]
+        public IHttpActionResult GetProjectbyId(int projectId)
+        {
+            return Ok(_projectManager.GetById(projectId));
+        }
         [HttpGet]
         [Route("GetAllFeaturedProjects")]
         public IHttpActionResult GetAllFeaturedProjects()
@@ -43,24 +49,24 @@ namespace Port.Net.API.Controllers
 
         [HttpPost]
         [Route("CreateProject")]
-        public IHttpActionResult CreateProject(Project project)
+        public IHttpActionResult CreateProject(ProjectModel project)
         {
             return Ok(_projectManager.CreateProject(project));
         }
 
-        [HttpPut]
+        [HttpPost]
         [Route("EditProject")]
-        public IHttpActionResult EditProject(Project project)
+        public IHttpActionResult EditProject(ProjectModel project)
         {
             return Ok(_projectManager.EditProject(project));
         }
 
 
-        [HttpDelete]
-        [Route("DeleteProject")]
-        public IHttpActionResult DeleteProject(Project project)
+        [HttpPost]
+        [Route("DeleteProject/{projectId}")]
+        public IHttpActionResult DeleteProject(int projectId)
         {
-            return Ok(_projectManager.DeleteProject(project));
+            return Ok(_projectManager.DeleteProject(projectId));
         }
     }
 }

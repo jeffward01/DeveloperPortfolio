@@ -73,10 +73,11 @@ namespace Port.Net.Data.Repositories
             }
         }
 
-        public Project Delete(Project project)
+        public Project Delete(int projectId)
         {
             using (var context = new PortfolioContext())
             {
+                var project = context.Projects.FirstOrDefault(_ => _.ProjectId == projectId);
                 context.Entry(project).State = EntityState.Deleted;
                 context.SaveChanges();
                 return project;

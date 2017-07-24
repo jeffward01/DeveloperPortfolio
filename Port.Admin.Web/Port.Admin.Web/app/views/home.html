@@ -1,0 +1,65 @@
+﻿<!-- Header -->
+<header id="page-top">
+    <div class="container" id="maincontent" tabindex="-1">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="img/profile.png" alt="">
+                <div class="intro-text">
+                    <h1 class="name">Jeff Ward</h1>
+                    <hr class="star-light">
+                    <span class="skills">Software Engineer - Blockchain Enthusiast - Passionate Technologist</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<!-- Skills Grid Section -->
+<section id="skills">
+    <div class="container">
+        <div class="row">
+            <div class="btn btn-lg pull-right btn-primary" type="button" ng-click="addProject()"><i class="fa fa-plus"></i>&nbsp;Add Project</div>
+            <div class="col-lg-12 text-center">
+                <h2>All Projects</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th class="port-center">Project Name</th>
+                        <th class="port-center">Project Short Desc</th>
+                        <th class="port-center">Project Summary</th>
+                        <th class="port-center">Project Repo Url</th>
+                        <th class="port-center">Featured</th>
+                        <th class="port-center">Blockchain</th>
+                        <th class="port-center"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-show="projects.length>=1" dir-paginate="project in projects |itemsPerPage:10 track by $index">
+                        <td class="port-center">{{project.ProjectName}}</td>
+                        <td class="port-center">{{project.ShortDesc}}</td>
+                        <td class="port-center">{{project.ProjectSummary | cut:true:100:' .....'}}</td>
+                        <td class="port-center"><a  target="_blank" href="{{project.RepoUrl}}">{{project.RepoUrl}}</a></td>
+                        <td class="port-center">{{project.FeaturedProject}}</td>
+                        <td class="port-center">{{project.BlockchainProject}}</td>
+                        <td>
+                            <ul style="list-style: none; display: inline-flex">
+                                <li style="margin-right:5px;"><i ng-click="viewProject(project.ProjectId)"style="font-size:14px" class="fa fa-eye"></i></li>
+                                <li style="margin-right:5px;margin-left:5px;"><i ng-click="editProject(project.ProjectId)" style="font-size:14px" class="fa fa-pencil"></i></li>
+                                <li style="margin-left:5px;"><i style="font-size:14px" ng-click="deleteProject(project.ProjectId)" class="fa fa-trash"></i></li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <tr ng-show="projects.length === 0">
+                        <td colspan="8" class="port-center"><p>No Projects have been added</p></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>

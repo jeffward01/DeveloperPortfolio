@@ -10,5 +10,6 @@ namespace Port.Net.Data.Repositories
         List<ProjectTechnology> GetAllByProjectId(int projectId);
         ProjectTechnology GetByTechnologyId(int techId);
         ProjectTechnology Delete(ProjectTechnology technology);
+        List<int> GetAllIdsFor(int projectId);
     }
 }
