@@ -180,6 +180,7 @@ namespace Port.Net.Business.Managers
                 RepoUrl = projectModel.RepoUrl,
                 ProjectTechnologies = projectTechnologies,
                 ProjectImages = projectImages,
+                ProjectUrl = projectModel.ProjectUrl,
                 FeaturedProject = projectModel.FeaturedProject
             };
         }

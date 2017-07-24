@@ -9,6 +9,8 @@ namespace Port.Net.Models.Dbo
         public string ShortDesc { get; set; }
         public string ProjectSummary { get; set; }
         public string RepoUrl { get; set; }
+        
+        public string ProjectUrl { get; set; }
 
         public bool FeaturedProject { get; set; }
         public bool BlockchainProject { get; set; }

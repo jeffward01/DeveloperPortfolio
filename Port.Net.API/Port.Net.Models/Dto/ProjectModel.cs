@@ -20,6 +20,8 @@ namespace Port.Net.Models.Dto
 
         [DataMember(Name = "RepoUrl")]
         public string RepoUrl { get; set; }
+        [DataMember(Name = "ProjectUrl")]
+        public string ProjectUrl { get; set; }
 
         [DataMember(Name = "FeaturedProject")]
         public bool FeaturedProject { get; set; }

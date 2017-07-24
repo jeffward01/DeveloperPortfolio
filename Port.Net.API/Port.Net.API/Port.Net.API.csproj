@@ -198,6 +198,7 @@
     <Compile Include="App_Start\ContainerConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\AuthenticateController.cs" />
     <Compile Include="Controllers\EmailController.cs" />
     <Compile Include="Controllers\GithubController.cs" />
     <Compile Include="Controllers\ProjectController.cs" />

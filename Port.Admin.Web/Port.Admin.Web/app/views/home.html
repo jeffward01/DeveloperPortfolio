@@ -34,6 +34,7 @@
                         <th class="port-center">Project Short Desc</th>
                         <th class="port-center">Project Summary</th>
                         <th class="port-center">Project Repo Url</th>
+                        <th class="port-center">Website Url</th>
                         <th class="port-center">Featured</th>
                         <th class="port-center">Blockchain</th>
                         <th class="port-center"></th>
@@ -45,6 +46,7 @@
                         <td class="port-center">{{project.ShortDesc}}</td>
                         <td class="port-center">{{project.ProjectSummary | cut:true:100:' .....'}}</td>
                         <td class="port-center"><a  target="_blank" href="{{project.RepoUrl}}">{{project.RepoUrl}}</a></td>
+                        <td class="port-center"><a  target="_blank" href="{{project.ProjectUrl}}">{{project.ProjectUrl}}</a></td>
                         <td class="port-center">{{project.FeaturedProject}}</td>
                         <td class="port-center">{{project.BlockchainProject}}</td>
                         <td>

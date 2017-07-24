@@ -3,7 +3,7 @@
     position: relative;
 }
 
-.progress-wrapper .text {
+    .progress-wrapper .text {
         position: absolute;
         top: 50%;
         left: 0;
@@ -13,7 +13,6 @@
         width: 100%;
         z-index: 1;
     }
-
 
 /* PLaceholder text color */
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
@@ -42,7 +41,6 @@
 .skill-text {
     font-size: 18px;
     color: darkslategray;
-
 }
 
 .skill-score-text {
@@ -51,7 +49,7 @@
 }
 
 .contact-text {
-    color: white;   
+    color: white;
 }
 
 .featuredItem {
@@ -78,14 +76,13 @@ th {
 }
 
 .port-caption-text {
-    position: absolute; 
-    top: 200px; 
-    left: 0; 
-    width: 100%;  
+    position: absolute;
+    top: 200px;
+    left: 0;
+    width: 100%;
 }
 
 .post-content {
-
     top: 0;
     left: 0;
     max-width: 360px;
@@ -104,7 +101,6 @@ th {
     top: 0;
     color: #ffffff;
 }
-
 
 /*Slider */
 /* The switch - the box around the slider */
@@ -171,4 +167,12 @@ input:checked + .slider:before {
 .port-col {
     float: left;
     width: 175px;
+}
+
+.short-line {
+    height: 5px;
+    border: none;
+    color: white;
+    background-color: white;
+    max-width: 250px;
 }
