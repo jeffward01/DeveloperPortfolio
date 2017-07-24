@@ -39,7 +39,12 @@ namespace Port.Net.API.Controllers
         {
             return Ok(_projectManager.GetAllFeaturedProjects());
         }
-
+        [HttpGet]
+        [Route("GetAllBlockchainProjects")]
+        public IHttpActionResult GetAllBlockchainProjects()
+        {
+            return Ok(_projectManager.GetAllBlockchainProjects());
+        }
         [HttpGet]
         [Route("GetAllUnFeaturedProjects")]
         public IHttpActionResult GetAllUnFeaturedProjects()

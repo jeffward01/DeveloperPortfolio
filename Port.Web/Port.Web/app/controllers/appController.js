@@ -1,7 +1,7 @@
 ﻿angular.module("app").controller('appController',
     [
-        '$scope', '$state', 'authService', 'stateManager', 'alertService', 'smoothScroll', '$rootScope', '$timeout',
-        function ($scope, $state, authService, stateManager, alertService, smoothScroll, $rootScope, $timeout) {
+        '$scope', '$state', 'authService', 'stateManager', 'alertService', 'smoothScroll', '$rootScope', '$timeout', '$http',
+        function ($scope, $state, authService, stateManager, alertService, smoothScroll, $rootScope, $timeout, $http) {
             //This needs to update upon login, do a $scope.$on???
 
             checkAuthentication();
@@ -19,38 +19,59 @@
 
             $scope.goToHome = function () {
                 $state.go('app.home', {});
-                scroll('page-top');
+                $timeout(function () {
+                    scroll('page-top');
+                },
+                    350);
             }
 
             $scope.goToSnippet = function () {
                 $state.go('app.home', {});
-                scroll('portfolio');
+                $timeout(function () {
+                    scroll('portfolio');
+                },
+                    350);
                 $rootScope.$broadcast('openCodeSnippet');
             }
 
             $scope.goToSkills = function () {
                 $state.go('app.home', {});
-                scroll('skills');
+                $timeout(function () {
+                    scroll('skills');
+                },
+                    350);
             };
 
             $scope.gotoAbout = function () {
                 $state.go('app.home', {});
-                scroll('about');
+                $timeout(function () {
+                    scroll('aboutMe');
+                },
+                    350);
             };
 
             $scope.goToFeaturedProjects = function () {
                 $state.go('app.home', {});
-                scroll('featuredProjects');
+                $timeout(function () {
+                    scroll('featuredProjects');
+                },
+                    350);
             };
 
             $scope.goToContact = function () {
                 $state.go('app.home', {});
-                scroll('contact');
+                $timeout(function () {
+                    scroll('contact');
+                },
+                    350);
             };
 
             $scope.goToPortfolio = function () {
                 $state.go('app.home', {});
-                scroll('portfolio');
+                $timeout(function () {
+                    scroll('portfolio');
+                },
+                    350);
             };
 
             $scope.goToProfile = function () {

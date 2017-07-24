@@ -1,0 +1,26 @@
+﻿<div class="port-center">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th class="port-center">
+                Name
+            </th>
+            <th class="port-center">Description</th>
+            <th class="port-center">Stargazer Count</th>
+            <th class="port-center">URL</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr dir-paginate="repo in userStarredRepos | itemsPerPage:10 track by $index">
+            <td>{{repo.name}}</td>
+            <td>{{repo.description}}</td>
+            <td>{{repo.stargazers_count}}</td>
+            <td><a href="{{repo.html_url}}" target="_blank">{{repo.html_url}}</a></td>
+        </tr>
+        </tbody>
+    </table>
+    <dir-pagination-controls max-size="10"
+                             direction-links="true"
+                             boundary-links="true">
+    </dir-pagination-controls>
+</div>

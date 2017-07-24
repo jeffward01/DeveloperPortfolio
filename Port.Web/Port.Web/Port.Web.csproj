@@ -65,9 +65,13 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\controllers\resumeController.js" />
     <Content Include="app\services\githubService.js" />
     <Content Include="app\services\projectService.js" />
     <Content Include="app\views\allRepos.html" />
+    <Content Include="app\views\generalProjects.html" />
+    <Content Include="app\views\resume.html" />
+    <Content Include="app\views\starredRepos.html" />
     <Content Include="bower_components\angularUtils-pagination\dirPagination.js" />
     <Content Include="bower_components\angularUtils-pagination\dirPagination.tpl.html" />
     <Content Include="bower_components\angularUtils-pagination\index.js" />
@@ -312,6 +316,7 @@
     <Content Include="bower_components\angularUtils-pagination\bower.json" />
     <Content Include="bower_components\angularUtils-pagination\package.json" />
     <Content Include="bower_components\angularUtils-pagination\README.md" />
+    <Content Include="resume.pdf" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -579,10 +584,16 @@
     <Content Include="css\style.css" />
     <Content Include="gulpfile.js" />
     <Content Include="index.html" />
+    <Content Include="scripts\pdf.compat.js" />
+    <Content Include="scripts\pdf.js" />
+    <Content Include="scripts\pdf.worker.js" />
+    <Content Include="scripts\psdViewer.js" />
+    <Content Include="scripts\stars.js" />
     <Content Include="scripts\themeScript.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\views\blockchainProjects.html" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

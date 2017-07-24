@@ -1,0 +1,18 @@
+﻿<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Project Name</th>
+            <th>Project Short Desc</th>
+            <th>Project Summary</th>
+            <th>Project Repo Url</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr dir-paginate="project in blockchainProjects |itemsPerPage:10 track by $index">
+            <td><a ng-click="viewPortItem(project.ProjectId)">{{project.ProjectName}}</a></td>
+            <td>{{project.ShortDesc}}</td>
+            <td>{{project.ProjectSummary |cut:true:100:' .....'}}</td>
+            <td><a href="{{project.RepoUrl}}" target="_blank">{{project.RepoUrl}}</a></td>
+        </tr>
+    </tbody>
+</table>

@@ -16,32 +16,32 @@
                     <a href="#page-top"></a>
                 </li>
 
-                <li ng-click="goToSnippet()" scroll-to="portfolio" >
+                <li ng-click="goToSnippet()" scroll-to="portfolio"  ng-show="false">
                     <a>Code Snippets</a>
                 </li>
-                <li>
-                    <a href="#">Resume</a>
+                <li style="margin-top: 15px">
+                    <file-download fileurl="resume.pdf" linktext="Download Resume"></file-download>
                 </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
-                <li class="page-scroll" id="skillTab" ng-click="goToSkills()">
-                    <a href="#skills">Skills</a>
+                <li class="page-scroll"  id="skillTab" ng-click="goToSkills()">
+                    <a data-target="#skills" >Skills</a>
                 </li>
-                <li class="page-scroll" id="aboutTab" ng-click="goToAbout()" >
-                    <a href="#about">About</a>
+                <li class="page-scroll"  id="aboutTab" ng-click="gotoAbout()" >
+                    <a data-target="#aboutMe">About</a>
                 </li>
-                <li class="page-scroll" id="featuredProjectTab" ng-click="goToFeaturedProjects()">
-                    <a href="#featuredProjects">Featured Projects</a>
+                <li class="page-scroll"  id="featuredProjectTab" ng-click="goToFeaturedProjects()">
+                    <a data-target="#featuredProjects">Featured Projects</a>
                 </li>
-                <li class="page-scroll" id="portfolioTab" ng-click="goToPortfolio()">
-                    <a href="#portfolio">Portfolio</a>
+                <li class="page-scroll"  id="portfolioTab" ng-click="goToPortfolio()">
+                    <a data-target="#portfolio">Portfolio</a>
                 </li>
 
-                <li class="page-scroll" id="contactTab" ng-click="goToContact()">
-                    <a href="#contact">Contact</a>
+                <li class="page-scroll"  id="contactTab" ng-click="goToContact()">
+                    <a data-target="#contact">Contact</a>
                 </li>
             </ul>
         </div>
@@ -90,7 +90,7 @@
                     <h3>Useful Links</h3>
                     <ul class="list-inline" style="text-align: center; margin: 0 auto">
                         <li>
-                            <p><a href="#">Resume</a></p>
+                            <p><a href="#"><file-download fileurl="resume.pdf" linktext="Resume"></file-download></a></p>
                         </li>
                         <li>
                             <p><a href="#">Blog</a></p>

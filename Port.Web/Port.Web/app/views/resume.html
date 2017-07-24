@@ -1,0 +1,22 @@
+﻿<button type="button" target="_self" href="resume.pdf" style="margin-bottom: -300px; " download="resume.pdf" class="btn btn-lg btn-primary">Download Resume</button>
+<div class="container port-center">
+    <div class="row">
+      
+    </div>
+    <div style="margin-top: 100px; margin-bottom: 100px">
+        
+
+        
+        <select ng-model="selectedFile">
+            <option value="resume.pdf">Resume</option>
+        </select>
+  
+        <p>
+        <strong>You have selected:</strong> {{ selectedFile }}
+        <br/>
+        <file-download fileurl="{{ selectedFile }}" linktext="Click to download"></file-download>
+        </p>
+        <!--<pdfviewer src="resume.pdf" on-page-load='pageLoaded(page,total)' id="viewer"></pdfviewer>-->
+    </div>
+  
+</div>

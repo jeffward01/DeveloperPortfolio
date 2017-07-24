@@ -82,8 +82,28 @@
                 return deferred.promise;
             }
 
-
-
+            var _getAllBlockchainProjects = function () {
+                var deferred = $q.defer();
+                $http.get(serviceUrl + "api/Project/GetAllBlockchainProjects").then(function (result) {
+                        deferred.resolve(result);
+                    },
+                    function (err) {
+                        deferred.reject(err);
+                    });
+                return deferred.promise;
+            }
+            var _sendEmail = function (email) {
+                var deferred = $q.defer();
+                $http.post(serviceUrl + "api/Email/SendEmail", email).then(function (result) {
+                        deferred.resolve(result);
+                    },
+                    function (err) {
+                        deferred.reject(err);
+                    });
+                return deferred.promise;
+            }
+            projectServiceFactory.getAllBlochckainProjects = _getAllBlockchainProjects;
+            projectServiceFactory.sendEmail = _sendEmail;
             projectServiceFactory.createProject = _createProject;
             projectServiceFactory.editProject = _editProject;
             projectServiceFactory.deleteProject = _deleteProject;

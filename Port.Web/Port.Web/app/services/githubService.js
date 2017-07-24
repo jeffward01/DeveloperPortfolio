@@ -3,7 +3,7 @@
         var githubUserServiceFactory = {};
 
         var _getUserInfo = function () {
-            var url = serviceUrl + "/api/test/userInfo";
+            var url = serviceUrl + "api/githubInfo/getUserInfo";
             var deferred = $q.defer();
             $http.get(url).then(function (result) {
                 deferred.resolve(result);
@@ -15,7 +15,7 @@
         };
 
         var _getUserRepos = function () {
-            var url = serviceUrl + "/api/test/userRepos";
+            var url = serviceUrl + "api/githubInfo/userRepos";
             var deferred = $q.defer();
             $http.get(url).then(function (result) {
                 deferred.resolve(result);
@@ -27,7 +27,7 @@
         };
 
         var _getUserStarredRepos = function () {
-            var url = serviceUrl + "/api/test/userStarredRepos";
+            var url = serviceUrl + "api/githubInfo/userStarredRepos";
             var deferred = $q.defer();
             $http.get(url).then(function (result) {
                 deferred.resolve(result);

@@ -34,6 +34,10 @@ namespace Port.Net.Business.Managers
         {
             return _projectRepository.GetAllFeaturedProjects();
         }
+        public List<Project> GetAllBlockchainProjects()
+        {
+            return _projectRepository.GetAllBlockchainProjects();
+        }
 
         public List<Project> GetAllUnFeaturedProjects()
         {

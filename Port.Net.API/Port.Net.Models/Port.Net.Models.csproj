@@ -58,9 +58,11 @@
     <Compile Include="AccountModels\AccountBindingModel.cs" />
     <Compile Include="AccountModels\AccountViewModel.cs" />
     <Compile Include="AccountModels\IdentityModel.cs" />
+    <Compile Include="Dbo\Email.cs" />
     <Compile Include="Dbo\Project.cs" />
     <Compile Include="Dbo\ProjectImage.cs" />
     <Compile Include="Dbo\ProjectTechnology.cs" />
+    <Compile Include="Dto\EmailModel.cs" />
     <Compile Include="Dto\GithubRepo.cs" />
     <Compile Include="Dto\GithubUserInfo.cs" />
     <Compile Include="Dto\ProjectImageModel.cs" />

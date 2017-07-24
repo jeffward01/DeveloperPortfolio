@@ -43,9 +43,10 @@ namespace Port.Net.API
             builder.RegisterType<ProjectImageManager>().As<IProjectImageManager>();
             builder.RegisterType<ProjectManager>().As<IProjectManager>();
             builder.RegisterType<ProjectTechnologyManager>().As<IProjectTechnologyManager>();
-
+            builder.RegisterType<EmailManager>().As<IEmailManager>();
 
             
+
             //___Providers____
             builder.RegisterType<HttpProvider>().As<IHttpProvider>();
             builder.RegisterType<GithubProvider>().As<IGithubProvider>();
@@ -60,7 +61,9 @@ namespace Port.Net.API
             builder.RegisterType<ProjectRepository>().As<IProjectRepository>();
             builder.RegisterType<ProjectTechnologyRepository>().As<IProjectTechnologyRepository>();
             builder.RegisterType<ProjectImageRepository>().As<IProjectImageRepository>();
+            builder.RegisterType<EmailRepository>().As<IEmailRepository>();
 
+            
 
 
             //Lookup Tables

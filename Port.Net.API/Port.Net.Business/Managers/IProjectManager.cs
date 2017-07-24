@@ -7,6 +7,7 @@ namespace Port.Net.Business.Managers
     public interface IProjectManager
     {
         Project CreateProject(ProjectModel projectmodel);
+        List<Project> GetAllBlockchainProjects();
         Project EditProject(ProjectModel project);
         Project DeleteProject(int projectId);
         List<Project> GetAll();

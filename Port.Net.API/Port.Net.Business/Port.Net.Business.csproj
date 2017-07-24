@@ -44,7 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Managers\EmailManager.cs" />
     <Compile Include="Managers\GithubManager.cs" />
+    <Compile Include="Managers\IEmailManager.cs" />
     <Compile Include="Managers\IGithubManager.cs" />
     <Compile Include="Managers\IProjectImageManager.cs" />
     <Compile Include="Managers\IProjectManager.cs" />

@@ -13,6 +13,7 @@ namespace Port.Net.Data.Infrastructure
         public DbSet<Project> Projects { get; set; }
         public DbSet<ProjectImage> ProjectImages { get; set; }
         public DbSet<ProjectTechnology> ProjectTechnologies { get; set; }
+        public DbSet<Email> Emails { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -24,7 +25,7 @@ namespace Port.Net.Data.Infrastructure
                 .WithOptional().HasForeignKey(_ => _.ProjectId).WillCascadeOnDelete(true);
 
             modelBuilder.Entity<ProjectImage>().HasKey(_ => _.ProjectImageId);
-
+            modelBuilder.Entity<Email>().HasKey(_ => _.EmailId);
             modelBuilder.Entity<ProjectTechnology>().HasKey(_ => _.ProjectTechnologyId);
 
             base.OnModelCreating(modelBuilder);

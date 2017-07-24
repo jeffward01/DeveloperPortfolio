@@ -50,7 +50,17 @@ namespace Port.Net.Data.Repositories
 
             }
         }
+        public List<Project> GetAllBlockchainProjects()
+        {
+            using (var context = new PortfolioContext())
+            {
+                return context.Projects
+                    .Include("ProjectTechnologies")
+                    .Include("ProjectImages").Where(_ => _.BlockchainProject == true).ToList();
 
+
+            }
+        }
         public List<Project> GetAllUnFeaturedProjects()
         {
             using (var context = new PortfolioContext())

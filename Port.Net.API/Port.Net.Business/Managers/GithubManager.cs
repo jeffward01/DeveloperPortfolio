@@ -30,7 +30,7 @@ namespace Port.Net.Business.Managers
         public async Task<List<GithubRepo>> GetStarredRepos()
         {
             var repos = await _githubProvider.GetAllGithubRepos();
-            return repos.Where(_ => _.stargazers_count > 0).ToList();
+            return repos.Where(_ => _.stargazers_count > 0).ToList().OrderByDescending(_ => _.stargazers_count).ToList();
         }
 
     }

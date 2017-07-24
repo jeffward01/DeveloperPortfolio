@@ -9,7 +9,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr dir-paginate="project in projects | itemsPerPage:10 track by $index">
+            <tr dir-paginate="project in generalProjects |itemsPerPage:10 track by $index">
                 <td><a ng-click="viewPortItem(project.ProjectId)">{{project.ProjectName}}</a></td>
                 <td>{{project.ShortDesc}}</td>
                 <td>{{project.ProjectSummary |cut:true:100:' .....'}}</td>

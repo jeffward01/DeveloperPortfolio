@@ -9,6 +9,7 @@ namespace Port.Net.Data.Repositories
         Project Edit(Project project);
         List<Project> GetAllProjects();
         Project GetById(int projectId);
+        List<Project> GetAllBlockchainProjects();
         Project Delete(int projectId);
         List<Project> GetAllFeaturedProjects();
         List<Project> GetAllUnFeaturedProjects();
