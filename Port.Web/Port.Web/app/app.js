@@ -1,5 +1,5 @@
 ﻿var app = angular.module('app',
-    ['ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner', 'smoothScroll', 'angular-svg-round-progressbar', 'angularUtils.directives.dirPagination','ngPDFViewer'])
+    ['ui.router', 'LocalStorageModule', 'angular-loading-bar', 'ui.bootstrap', 'ngSanitize', 'angularSpinner', 'smoothScroll', 'angular-svg-round-progressbar', 'angularUtils.directives.dirPagination'])
 
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
