@@ -317,6 +317,8 @@
     <Content Include="bower_components\angularUtils-pagination\package.json" />
     <Content Include="bower_components\angularUtils-pagination\README.md" />
     <Content Include="resume.pdf" />
+    <Content Include="data.tsv" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

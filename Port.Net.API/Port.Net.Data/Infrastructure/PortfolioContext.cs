@@ -6,7 +6,7 @@ namespace Port.Net.Data.Infrastructure
     public class PortfolioContext : DbContext, IPortfolioContext
     {
 
-        public PortfolioContext() : base("PortfolioContext")
+        public PortfolioContext() : base("DB_115610_portfoliocon")
         {
                 
         }

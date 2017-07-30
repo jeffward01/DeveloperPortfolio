@@ -9,33 +9,32 @@
 </header>-->
 <canvas id="sky" style="z-index:-1000; position: absolute;"></canvas>
 
-<div class="intro-text port-center" style="z-index: 1000; position: relative; ">
+<div class="intro-text port-center" style="z-index: 1000; position: relative; " id="page-top">
     <div style=" padding-top:350px;color: white">
         <h1 class="name" style="font-size: 75px">Jeff Ward</h1>
         <hr class="short-line">
         <span class="skills" style="color: white; font-size: 22px">Software Engineer - Blockchain Enthusiast - Passionate Technologist</span>                    <ul class="list-inline">
             <li>
-                <a href="#" class="btn-social btn-outline"><span class="sr-only">Github</span><i class="fa fa-fw fa-github"></i></a>
+                <a href="https://github.com/jeffward01" target="_blank" class="btn-social btn-outline"><span class="sr-only">Github</span><i class="fa fa-fw fa-github"></i></a>
             </li>
             <li>
-                <a href="#" class="btn-social btn-outline"><span class="sr-only">Medium</span><i class="fa fa-fw fa-medium"></i></a>
+                <a href="https://medium.com/@Crypto_Wizard" target="_blank" class="btn-social btn-outline"><span class="sr-only">Medium</span><i class="fa fa-fw fa-medium"></i></a>
             </li>
             <li>
-                <a href="#" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                <a href="https://twitter.com/jeffwardcoding" target="_blank" class="btn-social btn-outline"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
             </li>
             <li>
-                <a href="#" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
+                <a href="https://www.linkedin.com/in/jeffward01/" target="_blank" class="btn-social btn-outline"><span class="sr-only">Linked In</span><i class="fa fa-fw fa-linkedin"></i></a>
             </li>
             <li>
-                <a href="#" class="btn-social btn-outline"><span class="sr-only">Stack Overflow</span><i class="fa fa-fw fa-stack-overflow"></i></a>
+                <a href="https://stackoverflow.com/users/5022269/jward01?tab=profile" target="_blank" class="btn-social btn-outline"><span class="sr-only">Stack Overflow</span><i class="fa fa-fw fa-stack-overflow"></i></a>
             </li>
         </ul>
     </div>
 </div>
-</div>
 
 <!-- Skills Grid Section -->
-<section id="skills" style="margin-top: 550px">
+<section id="skills" style="margin-top: 200px">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
@@ -44,7 +43,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-sm-4  col-md-3 col-lg-3 portfolio-item">
+            <!--<div class="col-sm-4  col-md-3 col-lg-3 portfolio-item">
                 <div class="progress-wrapper" style="text-align: center; margin: 0 auto; margin-top: 25px">
                     <round-progress max="100"
                                     current="90"
@@ -265,7 +264,196 @@
                                     animation-delay="10"></round-progress>
                     <div class="text"><span class="skill-text">AWS - S3</span><br><br /><span class="skill-score-text">85/100</span></div>
                 </div>
+            </div>-->
+
+            <style>
+
+                .axis path, .axis line {
+                    fill: none;
+                    stroke: #fff;
+                }
+
+                .axis text {
+                    font-size: 13px;
+                }
+
+                .bar {
+                    fill: #18bc9c;
+                }
+
+                    .bar:hover {
+                        fill: #F56C4E;
+                    }
+
+                svg text.label {
+                    fill: white;
+                    font: 15px;
+                    font-weight: 400;
+                    text-anchor: middle;
+                }
+
+                #chartID {
+                    min-width: 531px;
+                }
+            </style>
+            <div class="port-center">
+                <div id="chartID"></div>
             </div>
+            <script>
+
+                var data = [
+                    { "food": ".Net Core", "quantity": 65 },
+                    { "food": ".NET Framework", "quantity": 90 },
+                    { "food": "AngularJS", "quantity": 90 },
+                    { "food": "Angular 2/4", "quantity": 78 },
+                    { "food": "Self Starting", "quantity": 100 },
+                    { "food": "Entity Framework", "quantity": 91 },
+                    { "food": "Rest APIs", "quantity": 87 },
+                    { "food": "AWS - S3", "quantity": 88 },
+                    { "food": "Linux", "quantity": 77 },
+                    { "food": "Test Driven Development", "quantity": 84 },
+                    { "food": "git/SVN", "quantity": 92 },
+                    { "food": "JSON RPC", "quantity": 87 },
+                    { "food": "SQL Server", "quantity": 91 },
+                    { "food": "node.js", "quantity": 73 },
+                    { "food": "Learning Ability", "quantity": 100 },
+
+                ];
+
+                var margin = { top: 10, right: 10, bottom: 90, left: 10 };
+
+                var width = 960 - margin.left - margin.right;
+
+                var height = 500 - margin.top - margin.bottom;
+
+                var xScale = d3.scale.ordinal().rangeRoundBands([0, width], .03)
+
+                var yScale = d3.scale.linear()
+                    .range([height, 0]);
+
+                var xAxis = d3.svg.axis()
+                    .scale(xScale)
+                    .orient("bottom");
+
+                var yAxis = d3.svg.axis()
+                    .scale(yScale)
+                    .orient("left");
+
+                var svgContainer = d3.select("#chartID").append("svg")
+                    .attr("width", width + margin.left + margin.right)
+                    .attr("height", height + margin.top + margin.bottom)
+                    .append("g").attr("class", "container")
+                    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+                xScale.domain(data.map(function (d) { return d.food; }));
+                yScale.domain([0, d3.max(data, function (d) { return d.quantity; })]);
+
+                //xAxis. To put on the top, swap "(height)" with "-5" in the translate() statement. Then you'll have to change the margins above and the x,y attributes in the svgContainer.select('.x.axis') statement inside resize() below.
+                var xAxis_g = svgContainer.append("g")
+                    .attr("class", "x axis")
+                    .attr("transform", "translate(0," + (height) + ")")
+                    .call(xAxis)
+                    .selectAll("text");
+
+                // Uncomment this block if you want the y axis
+                /*var yAxis_g = svgContainer.append("g")
+                        .attr("class", "y axis")
+                        .call(yAxis)
+                        .append("text")
+                        .attr("transform", "rotate(-90)")
+                        .attr("y", 6).attr("dy", ".71em")
+                        //.style("text-anchor", "end").text("Number of Applicatons");
+                */
+
+                svgContainer.selectAll(".bar")
+                    .data(data)
+                    .enter()
+                    .append("rect")
+                    .attr("class", "bar")
+                    .attr("x", function (d) { return xScale(d.food); })
+                    .attr("width", xScale.rangeBand())
+                    .attr("y", function (d) { return yScale(d.quantity); })
+                    .attr("height", function (d) { return height - yScale(d.quantity); });
+
+                // Controls the text labels at the top of each bar. Partially repeated in the resize() function below for responsiveness.
+                svgContainer.selectAll(".text")
+                    .data(data)
+                    .enter()
+                    .append("text")
+                    .attr("class", "label")
+                    .attr("x", (function (d) { return xScale(d.food) + xScale.rangeBand() / 2; }))
+                    .attr("y", function (d) { return yScale(d.quantity) + 1; })
+                    .attr("dy", ".75em")
+                    .attr("style", "font-size: 20px; margin-top: -60px")
+
+                    .text(function (d) { return d.quantity; });
+
+                resize();
+                //responsive
+                document.addEventListener("DOMContentLoaded", resize);
+                d3.select(window).on('resize', resize);
+
+                function resize() {
+                    console.log('----resize function----');
+                    // update width
+                    width = parseInt(d3.select('#chartID').style('width'), 10);
+                    width = width - margin.left - margin.right;
+
+                    height = parseInt(d3.select("#chartID").style("height"));
+                    height = height - margin.top - margin.bottom;
+                    console.log('----resiz width----' + width);
+                    console.log('----resiz height----' + height);
+                    // resize the chart
+
+                    xScale.range([0, width]);
+                    xScale.rangeRoundBands([0, width], .03);
+                    yScale.range([height, 0]);
+
+                    yAxis.ticks(Math.max(height / 50, 2));
+                    xAxis.ticks(Math.max(width / 50, 2));
+
+                    d3.select(svgContainer.node().parentNode)
+                        .style('width', (width + margin.left + margin.right) + 'px');
+
+                    svgContainer.selectAll('.bar')
+                        .attr("x", function (d) { return xScale(d.food); })
+                        .attr("width", xScale.rangeBand());
+
+                    svgContainer.selectAll("text")
+                        // .attr("x", function(d) { return xScale(d.food); })
+                        .attr("x", (function (d) { return xScale(d.food) + xScale.rangeBand() / 2; }))
+                        .attr("y", function (d) { return yScale(d.quantity) + 1; })
+                        .attr("dy", ".75em");
+
+                    svgContainer.select('.x.axis').call(xAxis.orient('bottom')).selectAll("text").attr("y", 10).call(wrap, xScale.rangeBand());
+                    // Swap the version below for the one above to disable rotating the titles
+                    // svgContainer.select('.x.axis').call(xAxis.orient('top')).selectAll("text").attr("x",55).attr("y",-25);
+
+                }
+                function wrap(text, width) {
+                    text.each(function () {
+                        var text = d3.select(this),
+                            words = text.text().split(/\s+/).reverse(),
+                            word,
+                            line = [],
+                            lineNumber = 0,
+                            lineHeight = 1.1, // ems
+                            y = text.attr("y"),
+                            dy = parseFloat(text.attr("dy")),
+                            tspan = text.text(null).append("tspan").attr("x", 0).attr("y", y).attr("dy", dy + "em");
+                        while (word = words.pop()) {
+                            line.push(word);
+                            tspan.text(line.join(" "));
+                            if (tspan.node().getComputedTextLength() > width) {
+                                line.pop();
+                                tspan.text(line.join(" "));
+                                line = [word];
+                                tspan = text.append("tspan").attr("x", 0).attr("y", y).attr("dy", ++lineNumber * lineHeight + dy + "em").text(word);
+                            }
+                        }
+                    });
+                }
+            </script>
         </div>
     </div>
 </section>
@@ -280,11 +468,34 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-4 col-lg-offset-2">
-                <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-            </div>
-            <div class="col-lg-4">
-                <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+            <div class="col-md-12 col-lg-12 col-sm-12">
+                <div class="col-lg-5 col-lg-offset-1">
+                    <p>
+                        My name is Jeff Ward and I am a versatile Software Engineer with strong technical
+                        knowledge and communication skills. I am a very competent and driven individual, which
+                        encourages growth in my skills as a developer. I thrive on overcoming challenges and learning
+                        new technologies in order to grow my knowledge. I have lead corporate global teams in the
+                        launching of a Fortune 500 companies flagship products and spearheaded unit and integration
+                        tests life cycles on several application platforms.
+                    </p>
+                </div>
+                <div class="col-lg-5">
+                    <p>
+                        Currently I am a Senior Software Developer at Universal Music Group. At UMG I have
+                        developed the Core API for current and future company web applications; Designed and
+                        implemented the SQL Server Database tables, stored procedures, and functions for the
+                        applications; I also optimized and enhanced Angular.js/Web API 2 back-office applications and
+                        increased load speeds by a factor of 10.
+                    </p>
+                </div>
+                <div class="col-md-12 col-lg-12 col-sm-12" style="padding-top: 25px">
+                    <p>
+                        I am a passionate Software Engineer and eager to learn new technologies. I can pick up
+                        a new framework in a few hours, and a language in a day or two. My passion for technology and
+                        development runs deep, stemming back to my childhood. This passion fuels my drive in this
+                        industry, and ensures that I will be a valuable asset to any company I work for.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
@@ -303,7 +514,7 @@
 
             <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
                 <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[0].ProjectId)">
-                    <img ng-src="{{featuredProjects[0].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <img ng-src="{{featuredProjects[0].FeaturedImageUrl}}" class="img-responsive port-featured-image" alt="Featured Project Image">
                     <div class="caption post-content">
                         <div class="details">
                             <h3>{{featuredProjects[0].ProjectName}}</h3>
@@ -313,7 +524,7 @@
             </div>
             <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
                 <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[1].ProjectId)">
-                    <img ng-src="{{featuredProjects[1].FeaturedImageUrl}}" class="img-responsive" alt="Cabin" ng-click="viewPortItem(featuredProjects[1].ProjectId)">
+                    <img ng-src="{{featuredProjects[1].FeaturedImageUrl}}" class="img-responsive port-featured-image" alt="Featured Project Image" ng-click="viewPortItem(featuredProjects[1].ProjectId)">
                     <div class="caption post-content">
                         <div class="details">
                             <h3>{{featuredProjects[1].ProjectName}}</h3>
@@ -323,7 +534,7 @@
             </div>
             <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
                 <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[2].ProjectId)">
-                    <img ng-src="{{featuredProjects[2].FeaturedImageUrl}}" class="img-responsive" alt="Cabin" ng-click="viewPortItem(featuredProjects[2].ProjectId)">
+                    <img ng-src="{{featuredProjects[2].FeaturedImageUrl}}" class="img-responsive port-featured-image" alt="Featured Project Image" ng-click="viewPortItem(featuredProjects[2].ProjectId)">
                     <div class="caption post-content">
                         <div class="details">
                             <h3>{{featuredProjects[2].ProjectName}}</h3>
@@ -333,7 +544,7 @@
             </div>
             <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
                 <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[3].ProjectId)">
-                    <img ng-src="{{featuredProjects[3].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <img ng-src="{{featuredProjects[3].FeaturedImageUrl}}" class="img-responsive port-featured-image" alt="Featured Project Image">
                     <div class="caption post-content">
                         <div class="details">
                             <h3>{{featuredProjects[3].ProjectName}}</h3>
@@ -344,7 +555,7 @@
 
             <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
                 <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[4].ProjectId)">
-                    <img ng-src="{{featuredProjects[4].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <img ng-src="{{featuredProjects[4].FeaturedImageUrl}}" class="img-responsive port-featured-image" alt="Featured Project Image">
                     <div class="caption post-content">
                         <div class="details">
                             <h3>{{featuredProjects[4].ProjectName}}</h3>
@@ -355,7 +566,7 @@
 
             <div class="col-sm-4 portfolio-item" style="margin-top: 25px">
                 <a class="portfolio-link thumbnail" ng-click="viewPortItem(featuredProjects[5].ProjectId)">
-                    <img ng-src="{{featuredProjects[5].FeaturedImageUrl}}" class="img-responsive" alt="Cabin">
+                    <img ng-src="{{featuredProjects[5].FeaturedImageUrl}}" class="img-responsive port-featured-image" alt="Featured Project Image">
                     <div class="caption post-content">
                         <div class="details">
                             <h3>{{featuredProjects[5].ProjectName}}</h3>

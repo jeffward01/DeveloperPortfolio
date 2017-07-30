@@ -2,7 +2,7 @@
     ['ui.router', 'LocalStorageModule', 'ui.bootstrap', 'ngSanitize', 'angularSpinner', 'smoothScroll', 'angular-loading-bar','angular-svg-round-progressbar', 'angularUtils.directives.dirPagination'])
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-        //   $urlRouterProvider.otherwise('app/home');
+           $urlRouterProvider.otherwise('app/home');
 
         //States
         $stateProvider.state('app',
@@ -67,7 +67,8 @@
         //  $urlRouterProvider.otherwise('/app/landingPage');
     }]);
 
-app.value('serviceUrl', 'http://port.service/');
+//app.value('serviceUrl', 'http://port.service/');
+app.value('serviceUrl', 'http://portfolioapi.jeffward-portfolio.com/');
 
 app.directive('security', ['$compile', 'localStorageService', '$timeout', function ($compile, localStorageService, $timeout) {
     return {

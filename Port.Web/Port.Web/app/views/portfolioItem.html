@@ -50,8 +50,11 @@
                     <span style="white-space: nowrap">Website Url:</span>&nbsp;<span>N/A</span>
                 </p>
                 <br/>
-                <p>
+                <p ng-show="project.RepoUrl != null">
                     <span style="white-space: nowrap">Repo Url:</span>&nbsp;<a target="_blank" href="{{project.RepoUrl}}">{{project.RepoUrl}} </a>
+                </p>
+                <p ng-show="project.RepoUrl == null">
+                    <span style="white-space: nowrap">Repo Url:</span>&nbsp;<span>Private Repo, please contact me for access</span>
                 </p>
                 <h3>Project Technolgies</h3>
                 <!--<ul ng-repeat="tech in project.ProjectTechnologies track by $index">

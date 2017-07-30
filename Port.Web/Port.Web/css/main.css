@@ -71,7 +71,6 @@ th {
 }
 
 .portfolio-tab-height {
-    max-height: 660px;
     min-height: 600px;
 }
 
@@ -175,4 +174,9 @@ input:checked + .slider:before {
     color: white;
     background-color: white;
     max-width: 250px;
+}
+
+.port-featured-image {
+    max-height: 218.5px;
+    max-width: 446px;
 }

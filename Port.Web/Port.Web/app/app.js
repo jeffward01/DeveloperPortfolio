@@ -3,7 +3,7 @@
 
 
     .config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-       //   $urlRouterProvider.otherwise('app/home');
+          $urlRouterProvider.otherwise('app/home');
 
         //States
         $stateProvider.state('app',
@@ -49,7 +49,8 @@
         //  $urlRouterProvider.otherwise('/app/landingPage');
     }]);
 
-app.value('serviceUrl', 'http://port.service/');
+//app.value('serviceUrl', 'http://port.service/');
+app.value('serviceUrl', 'http://portfolioapi.jeffward-portfolio.com/');
 
 // Hook in a directive
 app.directive('fileDownload', function () {
