@@ -49,7 +49,7 @@
                     <span style="white-space: nowrap">Website Url:</span>&nbsp;<span>N/A</span>
                 </p>
                 <br />
-                <p ng-show="project.RepoUrl != null && project.Repo.length > 2">
+                <p ng-show="project.RepoUrl != null && project.RepoUrl.length > 2">
                     <span style="white-space: nowrap">Repo Url:</span>&nbsp;<a target="_blank" href="{{project.RepoUrl}}">{{project.RepoUrl}} </a>
                 </p>
                 <p ng-show="project.RepoUrl == null || project.RepoUrl.length < 2">
