@@ -5,7 +5,6 @@
     <pre>{{images | json}}</pre>-->
     <div class="container">
 
-
         <!-- Portfolio Item Heading -->
         <div class="row">
 
@@ -44,17 +43,21 @@
 
                 <br />
                 <p ng-show="project.ProjectUrl != null">
-                    <span style="white-space: nowrap">Website Url:</span>&nbsp;<a   target="_blank" href="{{project.ProjectUrl}}">{{project.ProjectUrl}} </a>
+                    <span style="white-space: nowrap">Website Url:</span>&nbsp;<a target="_blank" href="{{project.ProjectUrl}}">{{project.ProjectUrl}} </a>
                 </p>
                 <p ng-show="project.ProjectUrl == null">
                     <span style="white-space: nowrap">Website Url:</span>&nbsp;<span>N/A</span>
                 </p>
-                <br/>
-                <p ng-show="project.RepoUrl != null">
+                <br />
+                <p ng-show="project.RepoUrl != null && project.Repo.length > 2">
                     <span style="white-space: nowrap">Repo Url:</span>&nbsp;<a target="_blank" href="{{project.RepoUrl}}">{{project.RepoUrl}} </a>
                 </p>
-                <p ng-show="project.RepoUrl == null">
-                    <span style="white-space: nowrap">Repo Url:</span>&nbsp;<span>Private Repo, please contact me for access</span>
+                <p ng-show="project.RepoUrl == null || project.RepoUrl.length < 2">
+                    <span style="white-space: nowrap">Repo Url:</span>&nbsp;<span>
+                        <a href="mailto:jeff@jeffwarddevelopment?subject = Access to Private Repo">
+                            This Repo is private, please contact Jeff Ward for access
+                        </a>
+                    </span>
                 </p>
                 <h3>Project Technolgies</h3>
                 <!--<ul ng-repeat="tech in project.ProjectTechnologies track by $index">
