@@ -27,13 +27,14 @@
                         <h3 class="page-header">Other Images</h3>
                     </div>
 
-                    <div ng-repeat="image in images track by $index">
+                    <div ng-repeat="image in images track by $index" ng-show="images.length>=1">
                         <div class="col-sm-3 col-xs-6">
                             <a href="{{image.ImageUrl}}">
                                 <img class="img-responsive portfolio-item" src="{{image.ImageUrl}}" target="_blank" alt="">
                             </a>
                         </div>
                     </div>
+                    <div ng-show="images.length<1"><p>No other images have been added.</p></div>
                 </div>
             </div>
             <!--http://placehold.it/750x500-->
